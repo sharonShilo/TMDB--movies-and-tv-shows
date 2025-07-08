@@ -19,6 +19,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -105,15 +106,23 @@ fun DetailsScreen(
     }
 
     val context = LocalContext.current
+
+    val shareText = remember(media) {
+        buildString {
+            append("Check out \"${media?.title}\"!")
+            media?.mediaType?.let { append("\n\nmediaType: $it") }
+            media?.overview?.let { append("\n\n$it") }
+            media?.popularity?.let { append("\n\npopularity: $it") }
+            media?.voteAverage?.let { append("\n\nvoteAverage: $it") }
+        }
+    }
     val title by remember { mutableStateOf(media?.title ?: "") }
     val imageUrl by remember { mutableStateOf(media?.cachedPosterFullPath ?: media?.posterPath?.let{ "$preImageUrl$it"}) }
     val rate by remember { mutableStateOf(media?.voteAverage ?: "") }
     val overview by remember { mutableStateOf(media?.overview ?: "") }
     val popularity by remember { mutableStateOf(media?.popularity ?: "") }
     var isFavorite by remember { mutableStateOf(media?.isFavorite ?: false) }
-    val video by remember { mutableStateOf(videoUrl) }
 
-    Log.i("shilo2", video.toString())
     Scaffold(
         topBar = {
             TopAppBar(
@@ -123,6 +132,19 @@ fun DetailsScreen(
                         Icon(Icons.Default.ArrowBack, contentDescription = stringResource(R.string.back), tint = Color(0xFF6200EE))
                     }
                 },
+                actions = {
+                    IconButton(onClick = {
+                        val sendIntent = Intent().apply {
+                            action = Intent.ACTION_SEND
+                            putExtra(Intent.EXTRA_TEXT, shareText)
+                            type = "text/plain"
+                        }
+                        val shareIntent = Intent.createChooser(sendIntent, "Share via")
+                        context.startActivity(shareIntent)
+                    }) {
+                        Icon(Icons.Default.Share, contentDescription = "Share")
+                    }
+                }
             )
         },
     ) { padding ->
@@ -180,7 +202,7 @@ fun DetailsScreen(
                         .padding(horizontal = 16.dp)
                         .fillMaxWidth()
                 ) {
-                    Text("Play Trailer")
+                    Text(stringResource(R.string.play_trailer))
                 }
             }
 
@@ -192,11 +214,9 @@ fun DetailsScreen(
                 modifier = Modifier
                     .padding(16.dp)
                     .fillMaxWidth(),
-//                colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF6200EE))
             ) {
                 Text(
                     text = if (isFavorite) stringResource(R.string.remove_favorite) else stringResource(R.string.add_favorite),
-                    color = Color.White
                 )
             }
         }

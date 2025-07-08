@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Poalim</string>
-    <string name="api_key" translatable="false">04242df1d0a5be340345d14e3791c174</string>
-    <string name="access_token" translatable="false">eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDI0MmRmMWQwYTViZTM0MDM0NWQxNGUzNzkxYzE3NCIsIm5iZiI6MTc1MTYyMDk2OC41NDQ5OTk4LCJzdWIiOiI2ODY3OWQ2OGYzZTQ2YTA3ZDk3YWI5MWQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.ggGRWbPX0Gik88io_bbmeRbymHwhsC2A-bFcCd30PuY</string>
 
     <string name="search_query">search for a movie or tv show</string>
     <string name="popular_tv_show">popular tv show</string>
@@ -11,4 +9,5 @@
     <string name="remove_favorite">remove favorite</string>
     <string name="favorite" translatable="false">favorite</string>
     <string name="back" translatable="false">back</string>
+    <string name="play_trailer">play trailer</string>
 </resources>

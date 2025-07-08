@@ -7,4 +7,5 @@
     <string name="rate">דירוג</string>
     <string name="add_favorite">הוספה למועדפים</string>
     <string name="remove_favorite">הסרה ממועדפים</string>
+    <string name="play_trailer">נגן טריילר</string>
 </resources>
