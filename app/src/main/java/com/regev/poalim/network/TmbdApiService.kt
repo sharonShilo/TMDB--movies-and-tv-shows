@@ -31,6 +31,8 @@ interface TmbdApiService {
     suspend fun getMediaDetails(
         @Path("media_type") mediaType: String,
         @Path("id") id: Int,
-        @Query("api_key") apiKey: String
+        @Query("api_key") apiKey: String,
+        @Query("append_to_response") appendToResponse: String = "videos"
     ): MediaDetails
+
 }

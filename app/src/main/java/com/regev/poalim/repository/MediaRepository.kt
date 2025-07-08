@@ -32,7 +32,7 @@ class MediaRepository @Inject constructor(
     suspend fun getPopularMovies(): List<Media> {
         val favorites = favoriteDao.getFavorites().map { it.id }.toSet()
         val apiResults = apiService.getPopularMovies(apiKey).results.map {  media ->
-            media.copy(isFavorite = media.id in favorites)
+            media.copy(mediaType = "movie", isFavorite = media.id in favorites)
         }
         return withContext(Dispatchers.IO) {
             apiResults.map { media ->
@@ -46,7 +46,7 @@ class MediaRepository @Inject constructor(
     suspend fun getPopularTvShows(): List<Media> {
         val favorites = favoriteDao.getFavorites().map { it.id }.toSet()
         val apiResults =  apiService.getPopularTvShows(apiKey).results.map {  media ->
-            media.copy(isFavorite = media.id in favorites)
+            media.copy(mediaType = "tv", isFavorite = media.id in favorites)
         }
         return withContext(Dispatchers.IO) {
             apiResults.map { media ->

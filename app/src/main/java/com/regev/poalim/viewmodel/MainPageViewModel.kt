@@ -34,6 +34,7 @@ open class MainPageViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 _popularMovies.value = mediaRepository.getPopularMovies()
+
             } catch (e: Exception) {
                 Log.e("MainPageViewModel", "retrieve data error $e")
             }

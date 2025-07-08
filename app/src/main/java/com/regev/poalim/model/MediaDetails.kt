@@ -10,7 +10,8 @@ data class MediaDetails(
     @SerializedName("vote_average") val voteAverage: Float,
     @SerializedName("release_date", alternate = ["first_air_date"]) val releaseDate: String?,
     @SerializedName("genres") val genres: List<Genre>,
-    @SerializedName("runtime", alternate = ["episode_run_time"]) val runtime: Any?
+    @SerializedName("runtime", alternate = ["episode_run_time"]) val runtime: Any?,
+    @SerializedName("videos") val videos: VideoResponse? = null
 )
 
 data class Genre(
