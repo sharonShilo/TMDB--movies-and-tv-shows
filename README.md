@@ -25,22 +25,19 @@ Uses the TMDB API key (stored securely in the app configuration).
 
 Image Caching
 
-Images are cached using file system with a 1-day expiration policy to optimize performance and reduce network usage.
+Images are cached using file system and database with a 1-day expiration policy to optimize performance and reduce network usage.
+
+favorite cache
+Favorite details cache in database using room
 
 Unit Tests
 
 Unit tests cover:
 ViewModel logic for data processing and state management.
-Repository layer for API and local data interactions.
-Utility functions for data parsing and transformations.
 
 
 TMDB API key (sign up at TMDB to obtain one).
 
-
-Running Tests
-
-Android: Run unit tests using:./gradlew test
 
 Notes
 
