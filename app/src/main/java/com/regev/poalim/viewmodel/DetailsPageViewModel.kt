@@ -3,9 +3,9 @@ package com.regev.poalim.viewmodel
 import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.regev.poalim.model.Media
-import com.regev.poalim.model.MediaDetails
 import com.regev.poalim.repository.MediaRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -23,7 +23,7 @@ class DetailsPageViewModel @Inject constructor(
 
 
     fun getMediaDetails(media: Media) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             try {
                 val details =
                     media.mediaType?.let { repository.getMediaDetails(id = media.id, mediaType = it) }

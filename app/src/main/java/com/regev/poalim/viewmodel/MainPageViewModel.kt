@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.regev.poalim.model.Media
 import com.regev.poalim.repository.MediaRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -31,7 +32,7 @@ open class MainPageViewModel @Inject constructor(
     }
 
     private fun getPopularMovies() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             try {
                 _popularMovies.value = mediaRepository.getPopularMovies()
 
@@ -42,7 +43,7 @@ open class MainPageViewModel @Inject constructor(
     }
 
     private fun getPopularTvShows() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             try {
                 _popularTvShows.value = mediaRepository.getPopularTvShows()
             } catch (e: Exception) {
@@ -52,13 +53,13 @@ open class MainPageViewModel @Inject constructor(
     }
 
     private fun addFavorite(media: Media) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             mediaRepository.addFavorites(media)
         }
     }
 
     private fun removeFavorite(media: Media) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             mediaRepository.removeFavorite(media)
         }
     }
@@ -66,7 +67,7 @@ open class MainPageViewModel @Inject constructor(
     fun toggleFavorite(media: Media) {
             if (media.isFavorite == true) {
                 removeFavorite(media)
-                // Update the media lists with new favorite status
+                // Update the media lists with new favorite status for UI
                 updateFavoriteStatus(media.id, false)
             } else {
                 addFavorite(media)
