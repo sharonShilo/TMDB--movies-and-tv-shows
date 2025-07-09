@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">Poalim</string>
 
-    <string name="search_query">search for a movie or tv show</string>
-    <string name="popular_tv_show">popular tv show</string>
-    <string name="popular_movie">popular movie</string>
-    <string name="rate">rate</string>
-    <string name="add_favorite">add favorite</string>
-    <string name="remove_favorite">remove favorite</string>
+    <string name="search_query">Search for a movie or tv show</string>
+    <string name="popular_tv_show">Popular tv show</string>
+    <string name="popular_movie">Popular movie</string>
+    <string name="rate">Rate</string>
+    <string name="add_favorite">Add favorite</string>
+    <string name="remove_favorite">Remove favorite</string>
     <string name="favorite" translatable="false">favorite</string>
     <string name="back" translatable="false">back</string>
-    <string name="play_trailer">play trailer</string>
+    <string name="play_trailer">Play trailer</string>
 </resources>

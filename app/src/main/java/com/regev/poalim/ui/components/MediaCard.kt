@@ -72,8 +72,3 @@ fun MediaCard(imageUrl: String?, title: String, rating: String, isFavorite: Bool
     }
 }
 
-@Preview
-@Composable
-fun previewMediaCard() {
-    MediaCard(imageUrl = "https://image.tmdb.org/t/p/w500/1QdXdRYfktUSONkl1oD5gc6Be0s.jpg", title = "sssss", rating = "ss", isFavorite = true, onClick = {})
-}

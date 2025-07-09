@@ -28,7 +28,7 @@ class MediaRepository @Inject constructor(
     private val cacheExpirationMs = TimeUnit.DAYS.toMillis(1)
     private val tmdbImageBaseUrl = "https://image.tmdb.org/t/p/w500"
 
-
+    //get popular movies from api, check for cached media if movie is favorite, then check in cached if there is cached image for this movie
     suspend fun getPopularMovies(): List<Media> {
         val favorites = favoriteDao.getFavorites().map { it.id }.toSet()
         val apiResults = apiService.getPopularMovies(apiKey).results.map {  media ->
@@ -62,6 +62,7 @@ class MediaRepository @Inject constructor(
             .filter { it.mediaType == "movie" || it.mediaType == "tv" }
     }
 
+    //add favorite to cache
     suspend fun addFavorites(media: Media) {
         favoriteDao.addFavorite(mediaToCachedFavoriteMedia(media))
     }
@@ -80,6 +81,7 @@ class MediaRepository @Inject constructor(
         favoriteDao.removeFavorite(mediaToCachedFavoriteMedia(media))
     }
 
+    //get favorite media from cache
     suspend fun getFavorites(): List<Media> {
         return favoriteDao.getFavorites().map {  favorite ->
             Media(
