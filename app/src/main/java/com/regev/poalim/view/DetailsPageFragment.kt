@@ -101,7 +101,7 @@ fun DetailsScreen(
 ) {
     val preImageUrl = "https://image.tmdb.org/t/p/w500"
 
-    LaunchedEffect(media?.id) {
+    LaunchedEffect(Unit) {
         onRequestMediaDetails()
     }
 
