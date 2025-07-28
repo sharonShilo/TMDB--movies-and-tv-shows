@@ -5,20 +5,20 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".application.MyApplication"
+        android:name="com.regev.tmdbApp.application.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_the_movie_db_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_the_movie_db_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Poalim"
+        android:theme="@style/Theme.TmdbApp"
         tools:targetApi="31">
         <activity
-            android:name=".view.NavHostActivity"
+            android:name="com.regev.tmdbApp.view.NavHostActivity"
             android:exported="true"
-            android:theme="@style/Theme.Poalim">
+            android:theme="@style/Theme.TmdbApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

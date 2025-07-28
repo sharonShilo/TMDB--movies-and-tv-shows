@@ -10,11 +10,11 @@ plugins {
 }
 
 android {
-    namespace = "com.regev.poalim"
+    namespace = "com.regev.tmdbApp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.regev.poalim"
+        applicationId = "com.regev.tmdbApp"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

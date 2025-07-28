@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Poalim"
+rootProject.name = "TmdbApp"
 include(":app")
  

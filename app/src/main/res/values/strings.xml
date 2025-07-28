@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Poalim</string>
+    <string name="app_name">TmdbApp</string>
 
     <string name="search_query">Search for a movie or tv show</string>
     <string name="popular_tv_show">Popular tv show</string>

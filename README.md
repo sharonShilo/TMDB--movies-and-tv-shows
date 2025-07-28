@@ -1,6 +1,6 @@
 Movie & TV Show App
 Overview
-This is a mobile application developed as part of the Poalim Android. The app allows users to browse popular movies and TV shows,
+The app allows users to browse popular movies and TV shows,
 search for content, view detailed information, play trailers, share content, and manage a favorites list. 
 The app uses the TMDB API for data, implements image caching, and follows modern architectural patterns.
 

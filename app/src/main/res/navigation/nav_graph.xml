@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.regev.poalim.view.SearchFragment">
+        android:name="com.regev.tmdbApp.view.SearchFragment">
         <action
             android:id="@+id/action_searchFragment_to_DetailsFragment"
             app:destination="@id/DetailsFragment" />
@@ -14,7 +14,7 @@
 
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.regev.poalim.view.FavoritesFragment">
+        android:name="com.regev.tmdbApp.view.FavoritesFragment">
 
         <action
             android:id="@+id/action_favoritesFragment_to_DetailsFragment"
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.regev.poalim.view.MainPageFragment">
+        android:name="com.regev.tmdbApp.view.MainPageFragment">
         <action
             android:id="@+id/action_mainFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
@@ -37,10 +37,10 @@
 
     <fragment
         android:id="@+id/DetailsFragment"
-        android:name="com.regev.poalim.view.DetailsPageFragment">
+        android:name="com.regev.tmdbApp.view.DetailsPageFragment">
         <argument
             android:name="media"
-            app:argType="com.regev.poalim.model.Media"
+            app:argType="com.regev.tmdbApp.model.Media"
             app:nullable="true"
             android:defaultValue="@null"/>
     </fragment>
