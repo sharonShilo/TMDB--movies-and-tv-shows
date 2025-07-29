@@ -14,7 +14,7 @@ Architecture
 
 Follows the MVVM (Model-View-ViewModel) architectural pattern for clean separation of concerns.
 Uses Repository Pattern for data handling (API and local storage).
-Implements Dependency Injection using Hilt (Android) or manual DI (iOS).
+Implements Dependency Injection using Hilt.
 
 TMDB API Integration
 
